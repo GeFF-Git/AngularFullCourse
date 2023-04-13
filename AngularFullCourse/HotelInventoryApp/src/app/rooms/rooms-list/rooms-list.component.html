@@ -1,0 +1,37 @@
+<!-- <p>rooms-list works!</p>
+Rooms List -->
+<h2>{{title}}</h2>
+<table class="table">
+  <tr>
+    <th>Index</th>
+    <th>Even/Odd</th>
+    <th>Room number</th>
+    <th>Room type</th>
+    <th>Room Price</th>
+    <th>Room amentites</th>
+    <th>Check-In Time</th>
+    <th>Check-Out Time</th>
+    <th>Rating</th>
+    <th>Select Room</th>
+  </tr>
+
+  <!-- Slice is generally used to pagination and filtering of records -->
+  <tr [ngClass]="e? 'even' : 'odd'" *ngFor="let room of roomsList | slice : 0:10 ; let o = odd ; let e = even ; let i = index" >
+    <td>{{i | percent}}</td>
+    <td>{{e?"Even":"Odd"}}</td>
+    <td>{{room.roomNumber}}</td>
+    <td>{{room.roomType}}</td>
+    <td>{{room.price | currency : 'INR'}}</td>
+    <td>{{room.amenities | titlecase}}</td>
+    <td>{{room.checkInTime | date : 'short'}}</td>
+    <td>{{room.checkOutTime | date : 'short'}}</td>
+    <td>{{room.rating | number : '1.1-1' : 'en-us'}}</td>
+    <td>
+      <button class="btn btn-primary" (click)="selectRoom(room)">
+        Select
+
+    </button></td>
+
+    <td></td>
+  </tr>
+</table>

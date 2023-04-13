@@ -1,0 +1,34 @@
+<h1>Hello World</h1>
+<!-- <hinv-rooms>
+  here it doesn't work because we dont have <ng-content> inside room.component.html
+  <h1>This is from ng-content</h1>
+</hinv-rooms> -->
+<hinv-container>
+  <hinv-rooms></hinv-rooms>
+  <hinv-employee></hinv-employee>
+  <h1>This is from ng-content</h1>
+</hinv-container>
+<div #name>
+
+
+
+</div>
+<!-- <div [ngSwitch]="role">
+  <div *ngSwitchCase="'User'">
+    Welcome User!
+  </div>
+  <div *ngSwitchCase="'Admin'">
+    <hinv-rooms></hinv-rooms>
+  </div>
+  <div *ngSwitchDefault>
+    You are not authorized to view this page!
+  </div>
+
+</div> -->
+
+
+<!-- #user is generally a template-reference -->
+<!-- Template reference is generally used to access html or other angular tags in component.ts -->
+<!-- <div>
+  <ng-template #user></ng-template>
+</div> -->

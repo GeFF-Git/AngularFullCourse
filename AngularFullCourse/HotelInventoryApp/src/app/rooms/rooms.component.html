@@ -1,0 +1,30 @@
+<!-- Ctrl+P is used to search and navigate to variuos files in vsc and browser -->
+
+<!-- <p>Welcome to {{hotelname}}</p> -->
+<hinv-header></hinv-header>
+<hinv-header></hinv-header>
+<hinv-header></hinv-header>
+<div [hidden]="hiderooms">
+  Number of rooms:
+<div [ngStyle]="{'color' : rooms.availableRooms>0 ? 'steelblue' : 'red'}" [innerText]="noofrooms"></div>
+</div>
+{{rooms?.availableRooms ?? "No Rooms"}}
+
+<!-- Json pipes can be applied on objects as well as arrays  -->
+<!-- Should be used for debugging purposes only -->
+<!-- {{roomsList | json }} -->
+<div *ngIf="selectedRoom">
+  {{selectedRoom | json}}
+</div>
+
+<div>
+  <button (click)="AddRoom()">Add Room</button>
+</div>
+<!-- <div *ngIf="rooms.availableRooms>0">
+ <hinv-rooms-list [roomsList]="roomsList" (selectedRoom)="selectRoom($event)" [title]="title"></hinv-rooms-list>
+</div> -->
+<div *ngIf="hiderooms">
+  <hinv-rooms-list [roomsList]="roomsList" (selectedRoom)="selectRoom($event)" [title]="title"></hinv-rooms-list>
+ </div>
+
+<button (click)="toggle()">Toggle</button>
